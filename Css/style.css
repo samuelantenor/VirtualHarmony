@@ -1,0 +1,234 @@
+html {
+    scroll-behavior: smooth;
+    width: 100vw;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url('../images/background.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative; /* Needed to position the pseudo-elements */
+    overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    left: -60%;
+    top: 0;
+    width: 100%; /* Set the width of the wave */
+    height: 100%;
+    background: url('../images/detail_02.png') no-repeat center left;
+    background-size: contain;
+    z-index: -1; /* Puts the wave behind the content */
+}
+
+
+
+#navig {
+    display: flex;
+    padding: 50px;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for scale */
+}
+
+
+#navig .nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;  /* Make the text bold */
+    display: flex;
+    align-items: center;
+    padding-right: 50px;
+    transition: transform 0.3s ease-in-out; /* Smooth in and out transition for scale */
+}
+
+#navig .nav-link:hover {
+    transform: scale(1.1); /* Scale up the link text on hover */
+}
+
+
+
+#navig #logo img {
+    height: 60px;
+}
+
+#logo {
+    margin-right: 50px;
+}
+
+#main, #apropos, #resultat {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    
+}
+
+#main {
+    color: white;
+    position: relative; /* Needed for absolute positioning of pseudo-elements */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+#main::before {
+    content: '';
+    position: absolute;
+    left: 60%;
+    top: 0;
+    width: 280%; /* Set the width of the wave */
+    height: 100%;
+    background: url('../images/detail_01.png') no-repeat center left;
+    background-size: contain;
+    z-index: -1; /* Puts the wave behind the content */
+}
+
+
+#main h1 {
+    font-size: 5em;
+    margin-bottom: 0.5em;
+    width: 10%;
+}
+
+#main p {
+    width: 60%;
+    font-size: 1.2em;
+    line-height: 1.5;
+    
+}
+#textmain{
+
+    width: 50%;
+    margin: 40px;
+}
+
+#apropos{
+    
+    position: relative; /* Needed for absolute positioning of pseudo-elements */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    z-index: 2; /* Higher z-index to keep text above the gradient */
+
+
+}
+#textapropos{
+
+    width: 70%;
+    margin: 40px;
+    padding: 20px; /* Add padding to create space around the text */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    border-radius: 80% 20% 90% 10% / 14% 92% 8% 86% ;
+    z-index: 3;
+   
+     
+   
+    
+}
+#apropos h1{
+
+font-size: 5em; 
+   
+}
+
+#apropos p {
+
+    
+    padding-left: 50px;
+    
+
+}
+
+
+#video-section {
+    background-color: transparent; /* Change if you want a specific background for this section */
+}
+
+.video-container {
+    position: relative;
+    width: 640px;
+    height: 360px;
+    background-color: #000000;
+    border: 5px solid white;
+    border-radius: 20px ;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-button {
+    position: absolute;
+    width: 100px;  /* Adjusted size */
+    height: 100px; /* Adjusted size */
+    background-color: white; /* Button color */
+    border-radius: 50%; /* Circle shape */
+    border: none;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline */
+
+    /* Centering the button */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-button .material-symbols-outlined {
+    color: black; /* Symbol color */
+    font-size: 48px; /* Larger size */
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+
+/* Additional styles for full page sections */
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#resultat{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Ensure that the gradient is positioned correctly */
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to top, rgba(0,0,0,5) 50%, rgba(0,0,0,0) 100%);
+    z-index: 1; /* Lower z-index than text content so it doesn't overlay it */
+    
+
+}
+
+
+/* Styles for fade-in animation */
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
